@@ -1,5 +1,5 @@
 {
-  "name": "@aframson/react-native-image-slider-oberry",
+  "name": "react-native-image-slider-oberry",
   "version": "1.0.1",
   "description": "A minimalistic Image slider with animation",
   "main": "index.js",
