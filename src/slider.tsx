@@ -108,7 +108,6 @@ export default class OberryImageSlider extends Component<Props> {
         width: '100%',
         transform: [{ translateY: this.state.animi }]
       }}>
-
         <Image style={styles.img} source={{ uri: item.image }} />
         <Animated.View style={{
           height: this.state.animi2,
@@ -123,6 +122,8 @@ export default class OberryImageSlider extends Component<Props> {
   }
 
 
+
+  
 
   render() {
     return (
@@ -142,7 +143,7 @@ export default class OberryImageSlider extends Component<Props> {
                 backgroundColor: 'black',
                 position: 'absolute',
                 bottom: 10,
-                right: this.props.images.length === this.state.end ? '4%' : '25%',
+                left:'4%',
                 borderRadius: 100,
                 opacity: 0.7,
                 justifyContent: 'center',
@@ -159,7 +160,7 @@ export default class OberryImageSlider extends Component<Props> {
                 backgroundColor: 'black',
                 position: 'absolute',
                 bottom: 10,
-                right: this.props.images.length === this.state.end ? '4%' : '25%',
+                left:'4%',
                 borderRadius: 100,
                 opacity: 0.7,
                 justifyContent: 'center',
@@ -176,7 +177,18 @@ export default class OberryImageSlider extends Component<Props> {
           ) : null}
 
           {!this.state.downDismis ? (
-            <TouchableOpacity onPress={() => this.SwipeDown()} style={styles.downbutt}>
+            <TouchableOpacity onPress={() => this.SwipeDown()} style={{
+              height: 50,
+              width: 50,
+              backgroundColor: 'black',
+              position: 'absolute',
+              bottom: 10,
+              right: this.props.images.length === this.state.end ? '4%' : '25%',
+              borderRadius: 100,
+              opacity: 0.7,
+              justifyContent: 'center',
+              alignItems: 'center'
+            }}>
               <AntDesign name="arrowdown" size={24} color="white" />
             </TouchableOpacity>
           ) : null}
@@ -205,18 +217,7 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
 
-  downbutt: {
-    height: 50,
-    width: 50,
-    backgroundColor: 'black',
-    position: 'absolute',
-    bottom: 10,
-    left: '4%',
-    borderRadius: 100,
-    opacity: 0.7,
-    justifyContent: 'center',
-    alignItems: 'center'
-  },
+  
   slideBorder: {
     //  borderWidth:2 ,
     marginTop: 50,
