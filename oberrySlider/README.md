@@ -1,4 +1,4 @@
-# react-native-image-slider-oberry
+# react-native-image-card-slider-oberry
 ## A minimalistic Animated Image Slider
 
 
