@@ -1,21 +1,72 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { Component } from 'react';
+import { View, Text, ScrollView } from 'react-native';
+import OberryImageSlider from './src/slider';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+const images = [
+	{
+		image:
+			'https://i2.wp.com/getrooms.co/wp-content/uploads/2020/07/victory-towers-hostel.png',
+		desc: 'Silent Waters in the mountains in midst of Himilayas',
+	},
+	{
+		image: 'https://storyv.com/wp-content/uploads/2020/07/lsrdn9p2ctbrxkpo4tfa.jpg',
+		desc: 'Red fort in India New Delhi is a magnificient masterpeiece of humans',
+	},
+	{
+		image: 'https://a.hwstatic.com/image/upload/f_auto,q_auto,t_80,c_fill,g_north/v1/propertyimages/4/4916/42.jpg',
+		desc: 'Red fort in India New Delhi is a magnificient masterpeiece of humans',
+	},
+	{
+		image: 'https://blog.getrooms.co/wp-content/uploads/2018/02/IMG_1419-49.jpg',
+		desc: 'Red fort in India New Delhi is a magnificient masterpeiece of humans',
+	},
+	{
+		image: 'https://storyv.com/wp-content/uploads/2020/07/lsrdn9p2ctbrxkpo4tfa.jpg',
+		desc: 'Red fort in India New Delhi is a magnificient masterpeiece of humans',
+	},
+];
+
+
+const images2 = [
+	{
+		image:
+			'https://blog.getrooms.co/wp-content/uploads/2018/01/IMG_1649-312.jpg',
+		desc: 'Silent Waters in the mountains in midst of Himilayas',
+	},
+	{
+		image: 'https://storyv.com/wp-content/uploads/2020/07/lsrdn9p2ctbrxkpo4tfa.jpg',
+		desc: 'Red fort in India New Delhi is a magnificient masterpeiece of humans',
+	},
+	{
+		image: 'https://a.hwstatic.com/image/upload/f_auto,q_auto,t_80,c_fill,g_north/v1/propertyimages/4/4916/42.jpg',
+		desc: 'Red fort in India New Delhi is a magnificient masterpeiece of humans',
+	},
+	{
+		image: 'https://blog.getrooms.co/wp-content/uploads/2018/02/IMG_1419-49.jpg',
+		desc: 'Red fort in India New Delhi is a magnificient masterpeiece of humans',
+	},
+	{
+		image: 'https://storyv.com/wp-content/uploads/2020/07/lsrdn9p2ctbrxkpo4tfa.jpg',
+		desc: 'Red fort in India New Delhi is a magnificient masterpeiece of humans',
+	},
+];
+
+export default class App extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {};
+	}
+
+	render() {
+		return (
+			<ScrollView>
+				<OberryImageSlider 
+          images={images} 
+          // descriptionStyle={{fontSize:30,fontWeight:'bold',padding:10,}}
+         />
+
+				<OberryImageSlider images={images2} />
+			</ScrollView>
+		);
+	}
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
