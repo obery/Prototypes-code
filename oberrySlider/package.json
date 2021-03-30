@@ -1,6 +1,6 @@
 {
-  "name": "react-native-image-slider-oberry",
-  "version": "1.0.1",
+  "name": "react-native-image-card-slider-oberry",
+  "version": "1.0.2",
   "description": "A minimalistic Image slider with animation",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/aframson/OberyImageSlider.git"
+    "url": "git+https://github.com/obery/react-native-image-slider-oberry.git"
   },
   "keywords": [
     "npm",
@@ -20,14 +20,16 @@
     "ios",
     "android",
     "web",
-    "animation"
+    "animation",
+    "oberry",
+    "card"
   ],
   "author": "Richard Obiri",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/aframson/OberyImageSlider/issues"
+    "url": "https://github.com/obery/react-native-image-slider-oberry/issues"
   },
-  "homepage": "https://github.com/aframson/OberyImageSlider#readme",
+  "homepage": "https://github.com/obery/react-native-image-slider-oberry#readme",
 
   "devDependencies": {
     "@babel/core": "^7.9.0",

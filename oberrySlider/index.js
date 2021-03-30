@@ -1,4 +1,4 @@
 import OberryImageSlider from './slider'
 
 
-export {OberryImageSlider};
+export default OberryImageSlider ;

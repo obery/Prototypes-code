@@ -25,13 +25,22 @@ interface State {
 const windowHeight: number = Dimensions.get('window').height;
 
 
+type SwipeUpButton = ()=>void
+type SwipeDownButton = ()=>void
+type ShowDescriptionButton = ()=>void
+type CloseDescriptionButton = ()=>void
+type checkEndModule = ()=>void
+type ShowImagesModule = ()=>any
+
+
+
 export default class OberryImageSlider extends Component<Props> {
   state: State = {
     animi: new Animated.Value(0),
     animi2: new Animated.Value(0),
     mv: 0,
     end: 1,
-    upDismis: false,
+    upDismis: false,   
     downDismis: true,
     closeDescription: false
   };
@@ -42,7 +51,7 @@ export default class OberryImageSlider extends Component<Props> {
 
 
 
-  SwipeUp = () => {
+  SwipeUp:SwipeUpButton = () => {
     this.setState({ mv: this.state.mv += windowHeight / 1.5, end: this.state.end += 1 })
     this.checkEnd()
     Animated.spring(this.state.animi, {
@@ -52,7 +61,7 @@ export default class OberryImageSlider extends Component<Props> {
     }).start()
   }
 
-  SwipeDown = () => {
+  SwipeDown:SwipeDownButton = () => {
     this.setState({ mv: 0 })
     this.setState({ mv: this.state.mv -= windowHeight / 1.5, end: this.state.end -= 1 })
     this.checkEnd()
@@ -64,7 +73,7 @@ export default class OberryImageSlider extends Component<Props> {
   }
 
 
-  ShowDiscription = () => {
+  ShowDiscription:ShowDescriptionButton = () => {
     this.setState({closeDescription:true})
     Animated.spring(this.state.animi2, {
       toValue: 200,
@@ -72,7 +81,7 @@ export default class OberryImageSlider extends Component<Props> {
       useNativeDriver: false
     }).start()
   }
-  CloseDiscription = () => {
+  CloseDiscription:CloseDescriptionButton = () => {
 
     this.setState({closeDescription:false})
 
@@ -83,7 +92,7 @@ export default class OberryImageSlider extends Component<Props> {
     }).start()
   }
 
-  checkEnd = () => {
+  checkEnd:checkEndModule = () => {
 
     let lenOfImage = this.props.images.length
     let endofImage = this.state.end
@@ -100,7 +109,7 @@ export default class OberryImageSlider extends Component<Props> {
 
   }
 
-  ShowImages = () => {
+  ShowImages:ShowImagesModule = () => {
 
     return this.props.images.map((item: any, index: number) => (
       <Animated.View key={index} style={{
@@ -114,7 +123,7 @@ export default class OberryImageSlider extends Component<Props> {
           width: '100%',
         }}>
           <Text style={this.props.descriptionStyle != undefined?this.props.descriptionStyle:{ fontSize: 30, padding: 10, color: 'black', fontWeight: 'bold' }}>
-            {item.desc}
+            {item.desc}   
           </Text>
         </Animated.View>
       </Animated.View>
