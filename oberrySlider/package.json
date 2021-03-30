@@ -1,6 +1,6 @@
 {
   "name": "react-native-image-card-slider-oberry",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "A minimalistic Image slider with animation",
   "main": "index.js",
   "scripts": {
@@ -24,7 +24,7 @@
     "oberry",
     "card"
   ],
-  "author": "Richard Obiri",
+  "author": "Richard Obiri <aframson77@gmail.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/obery/react-native-image-slider-oberry/issues"

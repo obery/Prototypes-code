@@ -1,29 +1,72 @@
-# react-native-image-card-slider-oberry
+# react-native-image-slider-oberry
 ## A minimalistic Animated Image Slider
 
+Build under the inspiration of product desgning
 
-[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
+
+
+
+
 
 ## Features
 
 - Animated Description
+- ![GitHub Logo](https://aboutreact.com/wp-content/uploads/2019/05/react_native_video3-169x300.png)
 - Simple Up and Down Swiping 
+- ![GitHub Logo](https://aboutreact.com/wp-content/uploads/2019/05/react_native_video3-169x300.png)
 - Customizable
+- ![GitHub Logo](https://aboutreact.com/wp-content/uploads/2019/05/react_native_video3-169x300.png)
 
 ## Installation
 
 
 ```sh
-npm i react-native-image-slider-oberry --save
+npm i react-native-image-card-slider-oberry
 npm i
-yarn add react-native-image-slider-oberry
+yarn add react-native-image-card-slider-oberry
+```
+```javascript
+
+import OberryImageSlider from 'react-native-image-card-slider-oberry';
+
+const images = [
+	{
+	image:'https://i2.wp.com/getrooms.co/wp-content/uploads/2020/07/victory-towers-hostel.png',
+	desc: 'Silent Waters in the mountains in midst of Himilayas',
+	},
+	{
+	image: 'https://storyv.com/wp-content/uploads/2020/07/lsrdn9p2ctbrxkpo4tfa.jpg',
+	desc: 'Red fort in India New Delhi is a magnificient masterpeiece of humans',
+	},
+	{
+	image: 'https://a.hwstatic.com/image/upload/f_auto,q_auto,t_80,c_fill,g_north/v1/propertyimages/4/4916/42.jpg',
+	desc: 'Red fort in India New Delhi is a magnificient masterpeiece of humans',
+	},
+	{
+	image: 'https://blog.getrooms.co/wp-content/uploads/2018/02/IMG_1419-49.jpg',
+	desc: 'Red fort in India New Delhi is a magnificient masterpeiece of humans',
+	},
+	{
+	image: 'https://storyv.com/wp-content/uploads/2020/07/lsrdn9p2ctbrxkpo4tfa.jpg',
+	desc: 'Red fort in India New Delhi is a magnificient masterpeiece of humans',
+	},
+];
+
+	return (
+	<View>
+     // you can add your own styles to the description 
+	<OberryImageSlider 
+      images={images} 
+      // descript ionStyle={{fontSize:30,fontWeight:'bold',padding:10,}}
+     />
+	</View>
+		);
 ```
 
-
-| Name | value |
-| ------ | ------ |
-| images | [array-of-objects][image:uri,desc:string] |
-| descriptionStyle | [css objects] |
+| Prop | datatype | keys |
+| ------ | ------ | ------ |
+| images | array-of-objects| image , desc|
+| descriptionStyle | objects | css styles |
 
 
 ## Development
