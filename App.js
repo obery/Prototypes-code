@@ -1,19 +1,21 @@
 import React, { Component } from 'react';
 import { View, Text, ScrollView } from 'react-native';
-import OberryImageSlider from 'react-native-image-slider-oberry';
+// import OberryImageSlider from 'react-native-image-card-slider-oberry';
+import OberryImageSlider from './slider';
+
 
 const images = [
 	{
 		image:
-			'https://i2.wp.com/getrooms.co/wp-content/uploads/2020/07/victory-towers-hostel.png',
-		desc: 'Silent Waters in the mountains in midst of Himilayas',
+			'https://i.pinimg.com/originals/41/61/9a/41619aa280a9deac3e97e115eecef634.png',
+		desc: 'Stones of harnest winds',
 	},
 	{
-		image: 'https://storyv.com/wp-content/uploads/2020/07/lsrdn9p2ctbrxkpo4tfa.jpg',
+		image: 'https://images.pexels.com/photos/1003914/pexels-photo-1003914.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
 		desc: 'Red fort in India New Delhi is a magnificient masterpeiece of humans',
 	},
 	{
-		image: 'https://a.hwstatic.com/image/upload/f_auto,q_auto,t_80,c_fill,g_north/v1/propertyimages/4/4916/42.jpg',
+		image: 'https://images.unsplash.com/photo-1561571994-3c61c554181a?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxleHBsb3JlLWZlZWR8M3x8fGVufDB8fHw%3D&w=1000&q=80',
 		desc: 'Red fort in India New Delhi is a magnificient masterpeiece of humans',
 	},
 	{
@@ -30,7 +32,7 @@ const images = [
 const images2 = [
 	{
 		image:
-			'https://blog.getrooms.co/wp-content/uploads/2018/01/IMG_1649-312.jpg',
+			'https://cdn.wallpapersafari.com/8/55/wZobKJ.jpg',
 		desc: 'Silent Waters in the mountains in midst of Himilayas',
 	},
 	{
@@ -54,7 +56,7 @@ const images2 = [
 const images3 = [
 
 	{
-		image: 'https://storyv.com/wp-content/uploads/2020/07/lsrdn9p2ctbrxkpo4tfa.jpg',
+		image: 'https://images.unsplash.com/photo-1561571994-3c61c554181a?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxleHBsb3JlLWZlZWR8M3x8fGVufDB8fHw%3D&w=1000&q=80',
 		desc: 'Red fort in India New Delhi is a magnificient masterpeiece of humans',
 	},
 	{

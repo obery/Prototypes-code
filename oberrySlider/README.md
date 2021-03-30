@@ -5,18 +5,15 @@ Build under the inspiration of product desgning
 
 
 
-
+- ![workflow Logo](http://pos.tuatuagye.com/flow-oberry-slider.png)
 
 
 ## Features
 
 - Animated Description
-- ![GitHub Logo](https://aboutreact.com/wp-content/uploads/2019/05/react_native_video3-169x300.png)
 - Simple Up and Down Swiping 
-- ![GitHub Logo](https://aboutreact.com/wp-content/uploads/2019/05/react_native_video3-169x300.png)
 - Customizable
-- ![GitHub Logo](https://aboutreact.com/wp-content/uploads/2019/05/react_native_video3-169x300.png)
-
+ # Demo : [click to view sample display](http://pos.tuatuagye.com/video-to-gif-converter-min.gif)
 ## Installation
 
 
@@ -51,6 +48,8 @@ const images = [
 	desc: 'Red fort in India New Delhi is a magnificient masterpeiece of humans',
 	},
 ];
+
+
 
 	return (
 	<View>
