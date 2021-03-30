@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, ScrollView } from 'react-native';
-import OberryImageSlider from './src/slider';
+import OberryImageSlider from './oberrySlider/slider';
 
 const images = [
 	{

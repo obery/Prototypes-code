@@ -121,8 +121,6 @@ export default class OberryImageSlider extends Component<Props> {
     ))
   }
 
-
-
   
 
   render() {
