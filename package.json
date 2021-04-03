@@ -9,13 +9,16 @@
   },
   "dependencies": {
     "@dudigital/react-native-zoomable-view": "^1.0.16",
+    "axios": "^0.21.1",
     "expo": "~40.0.0",
     "expo-status-bar": "~1.0.3",
     "react": "16.13.1",
     "react-dom": "16.13.1",
+    "react-infinite-scroll-component": "^6.0.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-40.0.1.tar.gz",
     "react-native-flatlist-slider": "^1.0.5",
-    "react-native-image-card-slider-oberry": "^1.0.4",
+    "react-native-image-card-slider-oberry": "^1.0.7",
+    "react-native-infinite-scrolling": "^2.0.0",
     "react-native-web": "~0.13.12"
   },
   "devDependencies": {

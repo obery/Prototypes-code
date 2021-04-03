@@ -2,9 +2,12 @@ import React, { Component } from 'react';
 import { View, Text, ScrollView } from 'react-native';
 // import OberryImageSlider from 'react-native-image-card-slider-oberry';
 import Story from './production/story'
-import OberryImageSlider from './production/slider';
-import Search from './production/search'
 
+import OberryImageSlider from './production/slider';
+import Detail from './production/detail';
+
+
+    
 
 
 const images = [
@@ -92,8 +95,6 @@ const images4 = [
 	},
 ];
 
-
-
 export default class App extends Component {
 	constructor(props) {
 		super(props);
@@ -103,18 +104,17 @@ export default class App extends Component {
 	render() {
 		return (
 			<ScrollView>
-		{/* <Story/> */}
+				{/* <OberryImageSlider
+          images={images}
+          // descript ionStyle={{fontSize:30,fontWeight:'bold',padding:10,}}
+         />
 
-        {/* <OberryImageSlider images={images}   width='100%' BorderRadius={0}/>
+				<OberryImageSlider images={images2} />
 
-		<OberryImageSlider images={images2}  width={'100%'} BorderRadius={0}/>
+        <OberryImageSlider images={images3} />
 
-        <OberryImageSlider images={images3}  width={'100%'} BorderRadius={0}/>
-
-        <OberryImageSlider images={images4}  width={'100%'} BorderRadius={0}/> */}
-
-
-		     <Search/>
+        <OberryImageSlider images={images4} /> */}
+        <Detail/>
 			</ScrollView>
 		);
 	}

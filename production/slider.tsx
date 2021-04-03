@@ -5,17 +5,19 @@ import { Entypo } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
 
 
+
 interface ImageProps {
-  image:string,
-  desc:string
+    image:string,
+    desc:string
 }
 
+
 interface Props {
-  images:ImageProps[],
-  descriptionStyle?: any,
-  containerStyle?: any,
-  width?:string|number|undefined,
-  BorderRadius?:number|undefined
+    images:ImageProps[],
+    descriptionStyle?: any,
+    containerStyle?: any,
+    width?:string|number|undefined,
+    BorderRadius?:number|undefined
 }
 
 
@@ -26,7 +28,8 @@ interface State {
     end: number,
     upDismis: boolean,
     downDismis: boolean,
-    closeDescription: boolean
+    closeDescription: boolean,
+    goTodetail: boolean
 }
 
 
@@ -53,7 +56,8 @@ export default class OberryImageSlider extends Component<Props> {
         end: 1,
         upDismis: false,
         downDismis: true,
-        closeDescription: false
+        closeDescription: false,
+        goTodetail: false
     };
     constructor(props: Props) {
         super(props);
@@ -67,7 +71,7 @@ export default class OberryImageSlider extends Component<Props> {
         this.checkEnd()
         Animated.spring(this.state.animi, {
             toValue: -this.state.mv,
-            bounciness: 15,
+            bounciness: 1,
             useNativeDriver: true
         }).start()
     }
@@ -78,27 +82,27 @@ export default class OberryImageSlider extends Component<Props> {
         this.checkEnd()
         Animated.spring(this.state.animi, {
             toValue: -this.state.mv,
-            bounciness: 15,
+            bounciness: 1,
             useNativeDriver: true
         }).start()
     }
 
 
     ShowDiscription: ShowDescriptionButton = () => {
-        this.setState({ closeDescription: true })
+        this.setState({ closeDescription: true, goTodetail: true })
         Animated.spring(this.state.animi2, {
-            toValue: windowHeight/2.5,
-            bounciness: 10,
+            toValue: windowHeight / 2.5,
+            bounciness: 1,
             useNativeDriver: false
         }).start()
     }
     CloseDiscription: CloseDescriptionButton = () => {
 
-        this.setState({ closeDescription: false })
+        this.setState({ closeDescription: false, goTodetail: false })
 
         Animated.spring(this.state.animi2, {
             toValue: 0,
-            bounciness: 0,
+            bounciness:0,  
             useNativeDriver: false
         }).start()
     }
@@ -146,7 +150,7 @@ export default class OberryImageSlider extends Component<Props> {
     render() {
         return (
             <View>
-                 <View style={this.props.containerStyle != undefined ? this.props.containerStyle : { marginTop: 50, alignSelf: 'center', width: this.props.width == undefined ?'95%':this.props.width, borderRadius: this.props.BorderRadius == undefined? 10:this.props.BorderRadius, height: Responsiveheight, overflow: 'hidden', }}>
+                <View style={this.props.containerStyle != undefined ? this.props.containerStyle : { marginTop: 50, alignSelf: 'center', width: this.props.width == undefined ?'95%':this.props.width, borderRadius: this.props.BorderRadius == undefined? 10:this.props.BorderRadius, height: Responsiveheight, overflow: 'hidden', }}>
 
                     {this.ShowImages()}
 
@@ -188,7 +192,13 @@ export default class OberryImageSlider extends Component<Props> {
                         </TouchableOpacity>
                     )}
 
-                    {!this.state.upDismis ? (
+                    {this.state.goTodetail ?
+                        <TouchableOpacity  style={styles.rightbutt}>
+                            <AntDesign name="arrowright" size={24} color="white" />
+                        </TouchableOpacity>
+                        : null}
+
+                    { !this.state.upDismis ? (
                         <TouchableOpacity onPress={() => this.SwipeUp()} style={styles.upbutt}>
                             <AntDesign name="arrowup" size={24} color="white" />
                         </TouchableOpacity>
@@ -229,6 +239,21 @@ const styles = StyleSheet.create({
         position: 'absolute',
         bottom: 10,
         right: '4%',
+        borderRadius: 100,
+        opacity: 0.7,
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+
+
+    
+    rightbutt: {
+        height: 50,
+        width: '35%',
+        backgroundColor: 'black',
+        position: 'absolute',
+        bottom: 10,  
+        left: '22%',
         borderRadius: 100,
         opacity: 0.7,
         justifyContent: 'center',

@@ -7,13 +7,22 @@ Build under the inspiration of product desgning
 
 - ![workflow Logo](http://pos.tuatuagye.com/flow-oberry-slider.png)
 
+- ![workflow Logo](http://pos.tuatuagye.com/c2.png)
+
+
+- ![workflow Logo](http://pos.tuatuagye.com/c3.png)
+
+
+- ![workflow Logo](http://pos.tuatuagye.com/c4.png)
+
+
 
 ## Features
 
 - Animated Description
 - Simple Up and Down Swiping 
 - Customizable
- # Demo : [click to view sample display](http://pos.tuatuagye.com/video-to-gif-converter-min.gif)
+ # Demo : [click to view sample display](https://youtu.be/DtNcWM3M5UU)
 ## Installation
 
 
@@ -53,11 +62,11 @@ const images = [
 
 	return (
 	<View>
-     // you can add your own styles to the description 
-	<OberryImageSlider 
-      images={images} 
-      // descript ionStyle={{fontSize:30,fontWeight:'bold',padding:10,}}
-     />
+     
+        <OberryImageSlider images={images} 
+        // descriptionStyle={{}} 
+        />
+
 	</View>
 		);
 ```
@@ -66,6 +75,8 @@ const images = [
 | ------ | ------ | ------ |
 | images | array-of-objects| image , desc|
 | descriptionStyle | objects | css styles |
+| width |string or number | default = '95%' |
+| BorderRadius |number |  default = 10 |
 
 
 ## Development
