@@ -4,6 +4,7 @@ import { View, Text, ScrollView } from 'react-native';
 import Story from './production/story'
 import OberryImageSlider from './production/slider';
 import Search from './production/search'
+import Authentication from './production/authentication'
 
 
 
@@ -102,7 +103,7 @@ export default class App extends Component {
 
 	render() {
 		return (
-			<ScrollView>
+			<View>
 		{/* <Story/> */}
 
         {/* <OberryImageSlider images={images}   width='100%' BorderRadius={0}/>
@@ -114,8 +115,8 @@ export default class App extends Component {
         <OberryImageSlider images={images4}  width={'100%'} BorderRadius={0}/> */}
 
 
-		     <Search/>
-			</ScrollView>
+		     <Authentication/>
+			</View>
 		);
 	}
 }
