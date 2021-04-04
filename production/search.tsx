@@ -6,7 +6,8 @@ import {
     StyleSheet,
     FlatList,
     ActivityIndicator,
-    Alert
+    Alert,
+    Image
 } from 'react-native';
 
 interface Props {
@@ -15,9 +16,12 @@ interface Props {
 interface State {
     loading: boolean,
     dataSource: string[],
-    offset: number,
+    page: number,
     isListEnd: boolean
 }
+
+
+const imageLocation:string = 'https://tuatuagye.com/admin/admin/pages/forms/products/'
 
 export default class Search extends Component<Props, State> {
     constructor(props: Props) {
@@ -25,39 +29,24 @@ export default class Search extends Component<Props, State> {
         this.state = {
             loading: false,
             dataSource: [],
-            offset: 10,
+            page: 1,
             isListEnd: false
 
         }
     }
 
     getData = () => {
-        console.log(this.state.offset);
-        const { loading, isListEnd, offset, dataSource } = this.state
-        if (!loading && !isListEnd) {
-            console.log('getData');
-            this.setState({ loading: true });
-            // Service to get the data from the server to render
-            fetch('http://10.204.38.24:9090/offset='+offset)
-                // Sending the currect offset with get request
+
+             this.setState({loading:true})
+            fetch('http://10.204.41.117:9090/products?page=' + this.state.page)
                 .then((response) => response.json())
                 .then((responseJson) => {
-                    // Successful response from the API Call
-                    console.log(responseJson);
-                    if (responseJson.length > 0) {   
-                        this.setState({ offset: offset + 1 })
-                        // After the response increasing the offset
-                        this.setState({dataSource:responseJson})   
-                        this.setState({ loading: true });   
-                    } else {
-                        this.setState({ isListEnd: true, loading: false })
-
-                    }
+                  this.setState(state=>({dataSource:[...state.dataSource,...responseJson.products]}))
                 })
                 .catch((error) => {
                     console.error(error);
                 });
-        }
+        
     };
 
 
@@ -68,50 +57,33 @@ export default class Search extends Component<Props, State> {
                 {this.state.loading ? (
                     <ActivityIndicator
                         color="black"
-                        style={{ margin: 15 }} />
+                        style={{ margin: 15 }} 
+                        size={'large'}
+                        />
                 ) : null}
             </View>
         );
     };
 
 
+    IncreaseData = ()=>{
+        this.setState(state=>({page:state.page + 1}),()=>this.getData())
+    }
+
 
     ItemView = ({ item }) => {
         return (
             // Flat List Item
-            <Text
-                style={styles.itemStyle}
-                onPress={() => this.getItem(item)}>
-                {item.product_name}
-                {'.'}
-                {item.product_price}
-            </Text>
+           <View style={styles.itemStyle}>
+             <View style={{height:200,width:'100%',}}>
+                <Image style={{height:null,width:null,flex: 1}} source={{uri:imageLocation+item.image}}/>
+             </View>
+             <Text>{item.id}</Text>
+           </View>
         );
     };
 
 
-
-
-
-    ItemSeparatorView = () => {
-        return (
-            // Flat List Item Separator
-            <View
-                style={{
-                    height: 0.5,
-                    width: '100%',
-                    backgroundColor: '#C8C8C8',
-                }}
-            />
-        );
-    };
-
-
-
-    getItem = (item) => {
-        // Function for click on an item
-        Alert.alert('Id : ' + item.id + ' Title : ' + item.title);
-    };
 
 
     componentDidMount() {
@@ -119,18 +91,18 @@ export default class Search extends Component<Props, State> {
     }
 
     render() {
-        return (
-            <View style={{flex: 1}}>
-            <FlatList
-              data={this.state.dataSource}
-              keyExtractor={(item, index) => index.toString()}
-              ItemSeparatorComponent={this.ItemSeparatorView}
-              renderItem={this.ItemView}
-              ListFooterComponent={this.renderFooter}
-              onEndReached={this.getData}
-              onEndReachedThreshold={0.5}
-            />
-          </View>   
+        return (    
+                <FlatList
+                    style={{flex: 1,}}
+                    data={this.state.dataSource}
+                    keyExtractor={(x, i) => i.toString()}
+                    renderItem={this.ItemView}
+                    onEndReached={()=>this.IncreaseData()}
+                    onEndReachedThreshold={0}
+                    ListFooterComponent={this.renderFooter} 
+
+                />
+           
         )
     }
 }
@@ -138,15 +110,14 @@ export default class Search extends Component<Props, State> {
 
 const styles = StyleSheet.create({
     footer: {
-      padding: 10,
-      justifyContent: 'center',
-      alignItems: 'center',
-      flexDirection: 'row',
+        padding: 10,
+        justifyContent: 'center',
+        alignItems: 'center',
+        flexDirection: 'row',
     },
-    itemStyle:{
-     borderWidth:1,
-     width:'100%',
-     height:300
+    itemStyle: {
+        borderWidth: 1,  
+        // width: '100%',
+        marginBottom:10
     }
-  });
-  
+});
