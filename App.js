@@ -5,6 +5,10 @@ import Story from './production/story'
 import OberryImageSlider from './production/slider';
 import Search from './production/search'
 import Authentication from './production/authentication'
+import SleekAuth from './production/authsleek'
+import  Minimal from "./production/minimalauth";
+
+
 
 
 
@@ -57,7 +61,7 @@ const images2 = [
 	},
 ];
 
-const images3 = [
+const images3 = [     
 
 	{
 		image: 'https://images.unsplash.com/photo-1561571994-3c61c554181a?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxleHBsb3JlLWZlZWR8M3x8fGVufDB8fHw%3D&w=1000&q=80',
@@ -104,7 +108,7 @@ export default class App extends Component {
 	render() {
 		return (
 			<View>
-		{/* <Story/> */}
+		{/* <Story/>  */}
 
         {/* <OberryImageSlider images={images}   width='100%' BorderRadius={0}/>
 
@@ -115,7 +119,7 @@ export default class App extends Component {
         <OberryImageSlider images={images4}  width={'100%'} BorderRadius={0}/> */}
 
 
-		     <Authentication/>
+		     <Minimal/>
 			</View>
 		);
 	}

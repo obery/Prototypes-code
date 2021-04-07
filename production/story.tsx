@@ -19,8 +19,9 @@ interface StoryData {
 
 const { width, height } = Dimensions.get('window');
 
-const MainColor: string = '#00A8E8';
-const blue:string = '#011627'
+// const MainColor: string = '#00A8E8';
+const MainColor: string = '#001E42'
+
 
 const data: StoryData[] = [
 
@@ -32,7 +33,7 @@ const data: StoryData[] = [
     },
     {
         key: '2',
-        text: 'finding hostels on campus have become very easy with hostyle',
+        text: 'finding hostels on campus is now  easy with LiveInn',
         desc: 'Find A Hostel',
 
     },
@@ -57,7 +58,7 @@ const data: StoryData[] = [
     {
         key: '6',
         text: 'Giving you what matters',
-        desc: 'Hostyle',
+        desc: 'LiveInn',
 
     },
 ];
@@ -78,64 +79,70 @@ export default class Story extends React.Component<Props, State> {
     public render() {
 
         const move = this.state.scrollX.interpolate({
-            inputRange: [0, 10, 900, 1000, 1500, 1800],
-            outputRange: ['white', 'skyblue', '#00BBFF', '#00BBFF', '#00CF98', blue],
+            inputRange: [0, width,width*2, width*3,width*4,width*5],
+            outputRange: ['white', 'skyblue', '#00BBFF', '#00BBFF', '#00CF98',MainColor],
         })
 
         const moveDown = this.state.scrollX.interpolate({
-            inputRange: [0, 600, 900],
-            outputRange: [0, 150, 150],
+            inputRange: [0, width,width*2],
+            outputRange: [0, 120, 15],
         })
 
         const moveHouse = this.state.scrollX.interpolate({
-            inputRange: [0, 600, 900, 1000, 1500],
-            outputRange: [0, -300, -300, -300, 250],
+            inputRange: [0, width, width*2, width*3],
+            outputRange: [0,0,-width/2,-width*5],
         })
 
         const scale = this.state.scrollX.interpolate({
-            inputRange: [0, 600, 900],
-            outputRange: [1, 0.2, 0.2],
+            inputRange: [0, width, width*2],
+            outputRange: [1, 0.5, 0.3],
         })
         const border = this.state.scrollX.interpolate({
-            inputRange: [0, 60, 900],
+            inputRange: [0, width, width*3],
             outputRange: [4, 0, 0],
         })
         const MoonDescend = this.state.scrollX.interpolate({
-            inputRange: [0, 200, 900],
-            outputRange: [-50, 80, -100],
+            inputRange: [0, width, width*2],
+            outputRange: [-250, 30, -250],
         })
 
         const ShowPhone = this.state.scrollX.interpolate({
-            inputRange: [0, 200, 900],
-            outputRange: [200, 300, -40],
+            inputRange: [0, width*2,width*3],
+            outputRange: [500,40,-400],
         })  
 
         const h1 = this.state.scrollX.interpolate({
-            inputRange: [0, 200, 900, 1000],
-            outputRange: [-120, -150, -150, -70],
+            inputRange: [0, width,width*2,width*3,width*4],
+            outputRange: [-120, -150, -150, 0,400],
         })
         const h2 = this.state.scrollX.interpolate({
-            inputRange: [0, 200, 900, 1000],
-            outputRange: [-300, -350, -350, -250],
+            inputRange: [0, width, width*2, width*3,width*4],
+            outputRange: [-300, -350, -350, -100,-400],
         })
         const mark = this.state.scrollX.interpolate({
             inputRange: [0, 200, 900, 1000],
             outputRange: [-150, -150, -150, -40],
         })
         const conn = this.state.scrollX.interpolate({
-            inputRange: [0, 200, 900, 1000, 1500],
+            inputRange: [0, width, width*2, width*3, width*4],
             outputRange: [-300, -350, -350, -350, 70],
         })
 
         const SwipeOpacity = this.state.scrollX.interpolate({
-            inputRange: [0, 200, 350, 400, 500],
-            outputRange: [1, 0, 1, 1, 1],
+            inputRange: [0, width/2, width*2/2, width*3/2, width*4/2, width*5/2],
+            outputRange: [1,0,1,1,1,1],  
+        })
+
+
+        const Turnbox = this.state.scrollX.interpolate({
+            inputRange: [0, width,width*5],
+            outputRange: [100,5,100],
         })
 
 
         const final = this.state.scrollX.interpolate({
-            inputRange: [0, 600, 900, 1000, 1500, 1800],
-            outputRange: [-300, -300, -300, -300, -300, -20],
+            inputRange: [0,width*5],
+            outputRange: [-width*5, 0],
         })
 
 
@@ -165,7 +172,8 @@ export default class Story extends React.Component<Props, State> {
                                     alignSelf: 'center',
                                     width: '80%',
                                     padding: 10,
-                                    textAlign: 'center'
+                                    textAlign: 'center',
+                                    color:MainColor
                                 }}>{item.desc}</Animated.Text>
 
                                 <Text style={{
@@ -181,7 +189,7 @@ export default class Story extends React.Component<Props, State> {
                                     <TouchableOpacity style={{
                                         alignSelf:'center',
                                         padding:20,
-                                        backgroundColor:blue,
+                                        backgroundColor:MainColor,
                                         justifyContent:'center',
                                         alignItems:'center',
                                         marginTop:100,
@@ -210,9 +218,10 @@ export default class Story extends React.Component<Props, State> {
                     position: 'absolute',
                     alignSelf: 'center',
                     marginTop: 30,
-                    borderRadius: 20,
+                    borderRadius:Turnbox,
                     borderWidth: border,
-                    overflow: 'hidden'
+                    overflow: 'hidden',
+                    borderColor:MainColor
                 }}>
                     <Animated.View style={{
                         height: 50,
@@ -228,18 +237,19 @@ export default class Story extends React.Component<Props, State> {
                     </Animated.View>
                     <Animated.Image style={{
                         height: null,
-                        width: 300,
+                        width: 150,
                         flex: 1,
-                        transform: [{ scale: scale }, { translateY: moveDown }, { translateX: moveHouse }],
-                        marginLeft: 50
-                    }} source={require('../assets/des1.png')} />
+                        alignSelf: 'center',
+                        zIndex:2000,
+                        transform: [{ scale: scale }, { translateY: moveDown },{ translateX: moveHouse }],
+                    }} source={require('../assets/logo.png')} />
                     <Animated.Image style={{
-                        height: 110,
-                        width: 105,
+                        height: 200,
+                        width: 200,
                         transform: [{ translateY: final }],
                         alignSelf: 'center',
                         position: 'absolute'
-                    }} source={require('../assets/logo-white-outline.png')} />
+                    }} source={require('../assets/logoz.png')} />
                     <Animated.Image style={{
                         height: 70,
                         width: 100,
@@ -283,7 +293,7 @@ export default class Story extends React.Component<Props, State> {
                         {/* screen */}
                         <View style={{
                             width: '90%',
-                            backgroundColor: blue,
+                            backgroundColor:MainColor,
                             borderRadius: 5,
                             height: 110,
                             alignSelf: 'center',

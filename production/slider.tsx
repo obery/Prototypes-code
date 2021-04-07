@@ -6,6 +6,7 @@ import { MaterialIcons } from '@expo/vector-icons';
 
 
 
+
 interface ImageProps {
     image:string,
     desc:string

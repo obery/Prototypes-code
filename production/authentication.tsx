@@ -170,7 +170,7 @@ export default class Authentication extends React.Component<Props, State> {
                         </View>
 
                         <View style={styles.inpbox}>
-                            <Text style={{ fontSize: 55, fontWeight: 'bold', color: 'black' }}>SignUp</Text>
+                            <Text style={{ fontSize: 55, fontWeight: 'bold', color: 'black' }}>Instituation</Text>
                             <TextInput
                                 style={styles.inp}
                                 placeholder="User name..."
@@ -209,7 +209,7 @@ export default class Authentication extends React.Component<Props, State> {
                           
                         </View>
                         <View style={styles.inpbox}>
-                            <Text style={{ fontSize: 55, fontWeight: 'bold', color: 'black' }}>SignUp</Text>
+                            <Text style={{ fontSize: 55, fontWeight: 'bold', color: 'black' }}>Programme</Text>
                             <TextInput
                                 style={styles.inp}
                                 placeholder="User name..."

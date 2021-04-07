@@ -19,6 +19,7 @@
     "react-native-flatlist-slider": "^1.0.5",
     "react-native-image-card-slider-oberry": "^1.0.7",
     "react-native-infinite-scrolling": "^2.0.0",
+    "react-native-tag-select": "^2.0.0",
     "react-native-web": "~0.13.12"
   },
   "devDependencies": {

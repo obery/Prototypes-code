@@ -1,36 +1,42 @@
 
 interface InstitutionData{
-    name:string,
-    image:string,
-    motto: string
+    Iname:string,
+    image:any,
+    motto: string,
+    key:number
 }
 
 const data:InstitutionData[]=[
     
      {
-         name:'University of CapeCoast',
-         image:'',
-         motto:''
+         Iname:'University of CapeCoast',
+         image:require('../assets/ucc.png'),
+         motto:'Veritas nobis Lumin',
+         key:1
      },
      {
-        name:'University Ghana Legon',
-        image:'',
-        motto:''
+        Iname:'University Ghana Legon',
+        image:require('../assets/legon.png'),
+        motto:'',
+        key:2
     },
     {
-        name:'KNUST',
-        image:'',
-        motto:''
+        Iname:'KNUST',
+        image:require('../assets/knust.png'),
+        motto:'',
+        key:3
     },
     {
-        name:'University of education',
-        image:'',
-        motto:''
+        Iname:'University of education',
+        image:require('../assets/winniba.png'),
+        motto:'',
+        key:4
     },
     {
-        name:'Accra Politechnic',
-        image:'',
-        motto:''
+        Iname:'Accra Politechnic',
+        image:require('../assets/acc.jpg'),
+        motto:'',
+        key:5
     }
 
 ]
