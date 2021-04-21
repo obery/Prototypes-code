@@ -2,11 +2,16 @@ import React, { Component } from 'react';
 import { View, Text, ScrollView } from 'react-native';
 // import OberryImageSlider from 'react-native-image-card-slider-oberry';
 import Story from './production/story'
+import Story2 from './production/story2'
+
 import OberryImageSlider from './production/slider';
 import Search from './production/search'
 import Authentication from './production/authentication'
 import SleekAuth from './production/authsleek'
 import  Minimal from "./production/minimalauth";
+import Menu from './production/menu'
+import Intro from './production/intro'
+
 
 
 
@@ -108,6 +113,9 @@ export default class App extends Component {
 	render() {
 		return (
 			<View>
+				<Menu/> 
+				<Intro/>      
+
 		{/* <Story/>  */}
 
         {/* <OberryImageSlider images={images}   width='100%' BorderRadius={0}/>
@@ -119,7 +127,7 @@ export default class App extends Component {
         <OberryImageSlider images={images4}  width={'100%'} BorderRadius={0}/> */}
 
 
-		     <Minimal/>
+		     {/* <Fluid/> */}
 			</View>
 		);
 	}

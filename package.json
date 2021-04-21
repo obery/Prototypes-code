@@ -17,8 +17,13 @@
     "react-infinite-scroll-component": "^6.0.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-40.0.1.tar.gz",
     "react-native-flatlist-slider": "^1.0.5",
+    "react-native-gesture-handler": "^1.10.3",
     "react-native-image-card-slider-oberry": "^1.0.7",
     "react-native-infinite-scrolling": "^2.0.0",
+    "react-native-paper": "^4.7.2",
+    "react-native-reanimated": "^2.1.0",
+    "react-native-redash": "^16.0.10",
+    "react-native-svg": "^12.1.1-0",
     "react-native-tag-select": "^2.0.0",
     "react-native-web": "~0.13.12"
   },
