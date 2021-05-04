@@ -40,7 +40,7 @@ const screen = [
   },
   { 
     i: 4,
-    name:'Swap It',
+    name:'Food and Drinks',
     desc:'Make money faster on campus with swapit',
     image:require('../assets/4.png') 
 
@@ -190,12 +190,15 @@ export default class Menu extends React.Component<Props, State> {
       <View>
                 <StatusBar hidden />
 
+
+            <Text style={{ fontSize:55, fontWeight: 'bold',padding: 20,position:'absolute'}}>Menu</Text>
+
             <Animated.View style={{
                 // borderWidth: 1,
                 height:height-heightRatio,
                 width:width-widthRatio,
                 position: 'absolute',
-                marginTop:120,
+                marginTop:100,
                 transform: [{ scale:scale4 },{ translateX:move4}],
                 backgroundColor:'#234',
                 opacity:fade4,
@@ -209,7 +212,7 @@ export default class Menu extends React.Component<Props, State> {
                 height:height-heightRatio,
                 width:width-widthRatio,
                 position: 'absolute',
-                marginTop:120,
+                marginTop:100,
                 transform: [{ scale:scale3 },{ translateX:move3}],
                 backgroundColor:'#044',
                 opacity:fade3,
@@ -224,7 +227,7 @@ export default class Menu extends React.Component<Props, State> {
                 width:width-widthRatio,
                 position: 'absolute',
                 // marginLeft:70,
-                marginTop:120,
+                marginTop:100,
                 transform: [{ scale:scale2 },{ translateX:move2}],
                 backgroundColor:'#c55445',
                 opacity:fade2,
@@ -242,7 +245,7 @@ export default class Menu extends React.Component<Props, State> {
                 height:height-heightRatio,
                 width:width-widthRatio,
                 position: 'absolute',
-                marginTop:120,
+                marginTop:100,
                 transform: [{ scale:scale1 },{ translateX:move1}],
                 backgroundColor:'#2f77d6',
                 opacity:fade1,
@@ -327,14 +330,18 @@ export default class Menu extends React.Component<Props, State> {
                             <Text style={{
                                fontSize:35, 
                                fontWeight: 'bold',
-                               marginTop:25,
-                               marginLeft:25
+                               marginTop:125,
+                               marginLeft:25,
+                               padding:10,
+                               color:'white'
                             }}>{item.name}</Text> 
                             <Text style={{
                                marginLeft:25,
                                fontSize:20,
                               //  borderWidth: 1,
-                               width:320 
+                               width:250,
+                               padding:10,
+                               color:'white'
                             }}>{item.desc}</Text> 
 
                             <View style={{
@@ -342,7 +349,6 @@ export default class Menu extends React.Component<Props, State> {
                               height:300,
                               width:300,
                               alignSelf: 'center',
-                              marginTop:100,
                               marginLeft:-50,
                               padding:50
                             }}>

@@ -66,8 +66,8 @@ const data: StoryData[] = [
 
 export default class Story extends React.Component<Props, State> {
 
-    constructor(props: Props) {
-        super(props);
+    constructor(props:Props) {
+        super(props); 
         this.state = {
             scrollX: new Animated.Value(0)
         };
@@ -80,7 +80,7 @@ export default class Story extends React.Component<Props, State> {
 
         const move = this.state.scrollX.interpolate({
             inputRange: [0, width,width*2, width*3,width*4,width*5],
-            outputRange: ['white', 'skyblue', '#00BBFF', '#00BBFF', '#00CF98',MainColor],
+            outputRange: ['white', 'white', 'white', 'white', 'white',MainColor],
         })
 
         const moveDown = this.state.scrollX.interpolate({

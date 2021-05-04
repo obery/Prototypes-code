@@ -29,8 +29,8 @@ const newItem = [
     },
     {
         id: 4,
-        title:'Swapit (Freelance)',
-        desc: 'Make quick money on campus by exhanging',
+        title:'Food and Drinks',
+        desc: 'Order for any food on campus at an instant',
         image: require('../assets/3.png')
     },
 ]

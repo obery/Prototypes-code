@@ -11,6 +11,7 @@ import SleekAuth from './production/authsleek'
 import  Minimal from "./production/minimalauth";
 import Menu from './production/menu'
 import Intro from './production/intro'
+import Walkthrough from './doki/walk-through.js'
 
 
 
@@ -113,10 +114,11 @@ export default class App extends Component {
 	render() {
 		return (
 			<View>
-				<Menu/> 
-				<Intro/>      
+				{/* <Menu/>  */}
+				{/* <Intro/>       */}
 
 		{/* <Story/>  */}
+		<Walkthrough/>
 
         {/* <OberryImageSlider images={images}   width='100%' BorderRadius={0}/>
 
