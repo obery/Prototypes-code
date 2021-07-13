@@ -21,9 +21,9 @@ AngularJS-powered HTML5 Markdown editor.
 
 
 ```sh
-npm i react-native-image-slider-oberry --save
+npm i @aframson/react-native-image-card-slider-oberry
 npm i
-yarn add react-native-image-slider-oberry
+yarn add @aframson/react-native-image-card-slider-oberry
 ```
 
 
